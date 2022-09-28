@@ -1,0 +1,21 @@
+body {
+    color: white;
+    background-color: black;
+}
+
+a{
+    text-decoration:none;
+    border:none;
+    color: inherit;
+}
+
+.donut-container,
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.donut-container {
+    height: 100vh;
+}
