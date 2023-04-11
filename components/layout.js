@@ -5,7 +5,7 @@ export default function Layout({ children }) {
         <>
             <div className="h-auto container px-4 lg:mx-auto lg:px-32">
                 <nav className="sticky top-4 my-4 h-1/4">
-                    <ul className='flex justify-start justify-between flex-wrap'>
+                    <ul className='flex justify-between flex-wrap'>
                         {links.map(({ id, ref, name }) => {
                             return (
                                 <li className="hover:text-gray-400" key={id}>
