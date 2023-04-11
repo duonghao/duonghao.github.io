@@ -1,15 +1,15 @@
-import { links } from "@/links/links";
+import { links } from "@/static/sections";
 
 export default function Layout({ children }) {
     return (
         <>
-            <div className="h-auto container lg:mx-auto lg:px-32">
+            <div className="h-auto container px-4 lg:mx-auto lg:px-32">
                 <nav className="sticky top-4 my-4 h-1/4">
-                    <ul class='flex justify-start lg:justify-between flex-wrap'>
-                        {links.map(({ id, name }) => {
+                    <ul className='flex justify-start justify-between flex-wrap'>
+                        {links.map(({ id, ref, name }) => {
                             return (
-                                <li key={id}>
-                                    <a href={`#${id}`}>
+                                <li className="hover:text-gray-400" key={id}>
+                                    <a href={`#${ref}`}>
                                         {name}
                                     </a>
                                 </li>
