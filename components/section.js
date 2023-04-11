@@ -1,29 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, forwardRef } from 'react';
 
-export default function Section(props) {
-    const [isIntersecting, setIsIntersecting] = useState(false);
-    const ref = useRef(null);
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) =>{
-        setIsIntersecting(entry.isIntersecting);
-        },
-        {
-            rootMargin: "-20%",
-        });
-        console.log(isIntersecting);
-        observer.observe(ref.current);
-        return () => observer.disconnect;
-    });
-    useEffect(() => {
-        if (isIntersecting) {
-            ref.current.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-
+const Section = forwardRef((props, ref) => {
     return (
-        <section id={props.id} className="min-h-screen flex flex-col justify-center" ref={ref}>
+        <section id={props.section_id} className="min-h-screen flex flex-col justify-center" ref={ref}>
             <h1 className="text-xl lg:text-4xl">
                 {props.heading}
             </h1>
@@ -32,4 +11,7 @@ export default function Section(props) {
             </h2>
         </section>
     );
-}
+});
+Section.displayName = "Section";
+
+export default Section;

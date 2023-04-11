@@ -1,51 +1,32 @@
-const links = [
-    {
-        id: 'home-link',
-        ref: 'home-section',
-        name: 'Home',
-    },
-    {
-        id: 'projects-link',
-        ref: 'projects-section',
-        name: 'Projects',
-    },
-    {
-        id: 'experience-link',
-        ref: 'experience-section',
-        name: 'Experience',
-    },
-    {
-        id: 'contact-link',
-        ref: 'contact-section',
-        name: 'Contact',
-    }
-]
-
 const sections = [
     {
-        id: 'home-section',
+        link_id: 'home-link',
+        section_id: 'home-section',
         name: 'Home',
         heading: "I'm Hao Duong",
         subheading: "Software Engineer. Mechanical Engineer."
     },
-    {
-        id: 'projects-section',
+    {   
+        link_id: 'projects-link',
+        section_id: 'projects-section',
         name: 'Projects',
         heading: "These are my projects...",
         subheading: "A showcase of my projects."
     },
     {
-        id: 'experience-section',
+        link_id: 'experience-link',
+        section_id: 'experience-section',
         name: 'Experience',
         heading: "These are my experiences...",
         subheading: "A showcase of my experiences"
     },
     {
-        id: 'contact-section',
+        link_id: 'contact-link',
+        section_id: 'contact-section',
         name: 'Contact',
         heading: "Contact me",
         subheading: "Contact details"
     }
 ];
 
-export { links, sections } ;
+export { sections } ;
