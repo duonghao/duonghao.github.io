@@ -29,7 +29,7 @@ export default function Home() {
     return () => {
       refs.forEach((ref) => ref && observer.unobserve(ref));
     };
-  }, [])
+  })
 
   return (
     <>
