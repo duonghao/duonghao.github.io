@@ -10,7 +10,6 @@ export default function Card(props) {
 
             </div>
             <div className="flex flex-col p-4 gap-4">
-                <div className="w-full h-32 border-2 border-black"></div>
                 {props.children}
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { links } from "@/static/sections";
+import { links } from "@/public/static/sections";
 
 export default function Layout({ children }) {
     return (

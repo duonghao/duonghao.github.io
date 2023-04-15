@@ -1,7 +1,7 @@
 import Layout from '@/components/layout';
 import Head from 'next/head';
 import React from 'react';
-import { sections } from '@/static/sections';
+import { sections } from '@/public/static/sections';
 import Section from '@/components/section';
 import Navbar from '@/components/navbar';
 import Animation from '@/components/animation';

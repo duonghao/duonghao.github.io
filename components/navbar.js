@@ -1,4 +1,4 @@
-import { sections } from "@/static/sections";
+import { sections } from "@/public/static/sections";
 
 export default function Navbar(props) {
     

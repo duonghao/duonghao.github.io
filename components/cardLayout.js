@@ -1,11 +1,20 @@
 import Card from "./card";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faJs, faNodeJs, faJava, faReact, faHtml5, faCss3 } from '@fortawesome/free-brands-svg-icons'
+import Image from 'next/image';
 
 export default function CardLayout() {
     return(
         <div className="w-[100%] grid grid-cols-1 lg:grid-cols-3 gap-4">
             <Card className="">
+                <div className="relative h-64 border-2 border-black">
+                    <Image
+                        src="/donut.png"
+                        alt="ASCII donut"
+                        fill={true}
+                        style={{objectFit:"contain"}}
+                    />
+                </div>
                 <h3 className="text-lg font-semibold">
                     Mmmmmmm donuts...
                 </h3>
@@ -18,6 +27,14 @@ export default function CardLayout() {
                 </div>
             </Card>
             <Card className="">
+                <div className="relative h-64 border-2 border-black">
+                    <Image
+                        src="/dictionaryclient.png"
+                        alt="dictionary client-server"
+                        fill
+                        style={{objectFit:"contain"}}
+                    />
+                </div>
                 <h3 className="text-lg font-semibold">
                     Dictionary Client-Server
                 </h3>
@@ -29,6 +46,14 @@ export default function CardLayout() {
                 </div>
             </Card>
             <Card className="">
+                <div className="relative h-64 border-2 border-black">
+                    <Image
+                        src="/portfolio.png"
+                        alt="personal portfolio"
+                        fill
+                        style={{objectFit:"contain"}}
+                    />
+                </div>
                 <h3 className="text-lg font-semibold">
                     Personal portfolio
                 </h3>
