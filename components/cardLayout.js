@@ -41,7 +41,7 @@ export default function CardLayout() {
                 <p>
                     Implementation of a distributed dictionary using sockets and threads.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex gap-4 text-sm">
                     <FontAwesomeIcon icon={faJava} size="2x"/>
                 </div>
             </Card>

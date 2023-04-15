@@ -6,6 +6,8 @@ import Section from '@/components/section';
 import Navbar from '@/components/navbar';
 import Animation from '@/components/animation';
 import { useState, useRef, useEffect, forwardRef } from 'react';
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 export default function Home() {
   const [active, setActive] = useState(sections[0].section_id);
@@ -37,6 +39,7 @@ export default function Home() {
         <title>
           Hao&apos;s Portfolio
         </title>
+        <style>{dom.css()}</style>
       </Head>
       <Layout>
         <Navbar active={active}></Navbar>

@@ -7,7 +7,7 @@ export default function Navbar(props) {
             <ul className='flex justify-between flex-wrap'>
                 {sections.map(({ link_id, section_id, name }) => {
                     return (
-                        <li className={(props.active == section_id ? " font-bold underline decoration-plum underline-offset-8" : "font-semibold")} key={link_id}>
+                        <li className={(props.active == section_id ? " font-bold underline underline-offset-8" : "font-semibold")} key={link_id}>
                             <a href={`#${section_id}`}>
                                 {name}
                             </a>
