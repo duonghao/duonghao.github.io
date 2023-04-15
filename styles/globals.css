@@ -1,12 +1,36 @@
 @tailwind base;
+
+@layer base {
+	h1 {
+	  @apply text-4xl;
+	}
+	h2 {
+	  @apply text-2xl;
+	}
+	h3 {
+	  @apply text-xl;
+	}
+	h4 {
+		@apply text-lg;
+	}
+  }
+
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  	background: linear-gradient(-45deg, #963484, #488BDF, #60AFFF);
+  	/*background: linear-gradient(-45deg, #963484, #488BDF, #60AFFF);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	color: white;
+	animation: gradient 15s ease infinite;*/
+	background-size: 20px 20px;
+	background-color: #F5F5F5;
+  	background-image:
+    linear-gradient(to right, rgb(206, 206, 206) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(206, 206, 206) 1px, transparent 1px);
+	color: black;
+	--padding-sm: 1rem;
+	--padding-md: 8rem;
+	--scrollbar-width: calc(100vw - 100%);
 }
 
 @keyframes gradient {
@@ -19,4 +43,98 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+@keyframes roll {
+	0% { 
+	  	transform: translate(0, 0)rotate(0deg);
+	}
+	100% {
+		transform: translate(calc(100vw - 2*var(--padding-sm) - var(--scrollbar-width)), 0) rotate(360deg);
+	}
+	/* 25% {
+		transform: translate(calc(100vw - 2*var(--padding-sm) - var(--padding-sm)), 100vh) rotate(360deg);
+	}
+	50% {
+		transform: translate(0, 200vh) rotate(360deg);
+	}
+	75% {
+		transform: translate(calc(100vw - 2*var(--padding-sm) - var(--padding-sm)), 300vh) rotate(360deg);
+	}
+	100% {
+		transform: translate(0, 400vh) rotate(360deg);
+	} */
+}
+
+
+@keyframes roll-lg {
+	0% { 
+	  	transform: translate(0, 0)rotate(0deg);
+	}
+	25% {
+		transform: translate(-450px, 450px) rotate(-360deg);
+	}
+	50% { 
+	  	transform: translate(30px, 900px) rotate(360deg);
+	}
+	75% {
+		transform: translate(-450px, 1350px) rotate(-360deg);
+	}
+	100% {
+		transform: translate(30px, 1800px) rotate(360deg);
+	}
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 0 solid transparent;
+	border-right: 200px solid transparent;
+	border-bottom: 200px solid black;
+}
+
+.triangle-lg {
+	width: 0;
+	height: 0;
+	border-left: 400px solid transparent;
+	border-right: 0 solid transparent;
+	border-bottom: 400px solid black;
+}
+
+.ball {
+	width: 25px;
+	height: 25px;
+	background: black;
+	border-radius: 50%;
+	animation: roll 10s 2s ease-in forwards;
+
+}
+
+.ball-lg {
+	width: 50px;
+	height: 50px;
+	background: black;
+	border-radius: 50%;
+	animation: roll 10s 2s ease-in forwards;
+
+}
+
+.marker {
+	width: 5px;
+	height: 5px;
+	background: white;
+	border-radius: 50%;
+}
+
+.marker-lg {
+	width: 10px;
+	height: 10px;
+	background: white;
+	border-radius: 50%;
+}
+
+.block {
+	width: 10px;
+	height: 300px;
+	background: black;
 }

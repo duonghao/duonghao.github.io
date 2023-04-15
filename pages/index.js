@@ -4,6 +4,7 @@ import React from 'react';
 import { sections } from '@/static/sections';
 import Section from '@/components/section';
 import Navbar from '@/components/navbar';
+import Animation from '@/components/animation';
 import { useState, useRef, useEffect, forwardRef } from 'react';
 
 export default function Home() {
@@ -51,7 +52,9 @@ export default function Home() {
                       if (node) {
                         refs.push(node);
                       }
-                    }}></Section>
+                    }}
+                    >
+                    </Section>
                 </>
               );
             })
