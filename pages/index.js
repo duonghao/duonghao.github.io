@@ -35,7 +35,7 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Hao's Portfolio
+          Hao&apos;s Portfolio
         </title>
       </Head>
       <Layout>
