@@ -1,5 +1,6 @@
 import { DarkModeToggle } from "@/components/custom/dark-mode-toggle";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { Linkedin, Github } from "lucide-react";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
             the stack with React, TypeScript, and Java to make things work—and
             work well.
           </p>
+          <Separator />
           <ul className="flex gap-4 mt-4">
             <li>
               <Button variant="default" size="icon">
