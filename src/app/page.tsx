@@ -1,6 +1,7 @@
 import { DarkModeToggle } from "@/components/custom/dark-mode-toggle";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Linkedin, Github } from "lucide-react";
 
 export default function Home() {
@@ -38,29 +39,36 @@ export default function Home() {
             </li>
           </ul>
         </header>
-        <section className="h-full flex flex-col p-4 z-10">
-          <nav className="mb-4">
-            <ul className="flex gap-4 md:gap-8">
-              <li>Experience</li>
-              <li>Projects</li>
-              <li>Blogs</li>
-              <li>Photography</li>
-            </ul>
-          </nav>
-          <ul className="grid grid-cols-2 gap-2 flex-1">
-            <li>
-              <div className="h-full w-full bg-gray-400"></div>
-            </li>
-            <li>
-              <div className="h-full w-full bg-gray-400"></div>
-            </li>
-            <li>
-              <div className="h-full w-full bg-gray-400"></div>
-            </li>
-            <li>
-              <div className="h-full w-full bg-gray-400"></div>
-            </li>
-          </ul>
+        <section className="h-full">
+          <Tabs defaultValue="projects" className="w-full h-full">
+            <TabsList>
+              <TabsTrigger value="projects">Projects</TabsTrigger>
+              <TabsTrigger value="experience">Experience</TabsTrigger>
+              <TabsTrigger value="blogs">Blogs</TabsTrigger>
+              <TabsTrigger value="photography">Photography</TabsTrigger>
+            </TabsList>
+            <TabsContent value="projects" className="h-full">
+              <article className="h-full">
+                <ul className="grid grid-cols-2 gap-2 flex-1 h-full">
+                  <li>
+                    <div className="h-full w-full bg-gray-400"></div>
+                  </li>
+                  <li>
+                    <div className="h-full w-full bg-gray-400"></div>
+                  </li>
+                  <li>
+                    <div className="h-full w-full bg-gray-400"></div>
+                  </li>
+                  <li>
+                    <div className="h-full w-full bg-gray-400"></div>
+                  </li>
+                </ul>
+              </article>
+            </TabsContent>
+            <TabsContent value="experience"></TabsContent>
+            <TabsContent value="blogs"></TabsContent>
+            <TabsContent value="photography"></TabsContent>
+          </Tabs>
         </section>
       </main>
     </>
