@@ -2,7 +2,7 @@ import { Linkedin, Github } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="flex items-center justify-center min-h-screen min-w-screen md:grid md:grid-cols-2 md:gap-8 p-16">
+    <main className="flex items-center justify-center min-h-screen min-w-screen md:grid md:grid-cols-2 md:gap-8 p-16 bg-amber-50/30">
       <header className="">
         <h3>Hello, World</h3>
         <h1>Hao Duong</h1>
