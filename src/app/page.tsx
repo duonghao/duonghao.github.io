@@ -1,4 +1,5 @@
 import { DarkModeToggle } from "@/components/custom/dark-mode-toggle";
+import { Button } from "@/components/ui/button";
 import { Linkedin, Github } from "lucide-react";
 
 export default function Home() {
@@ -18,16 +19,20 @@ export default function Home() {
             the stack with React, TypeScript, and Java to make things work—and
             work well.
           </p>
-          <ul className="flex gap-4">
+          <ul className="flex gap-4 mt-4">
             <li>
-              <a href="https://www.linkedin.com/in/hao-duong-a87058196/">
-                <Linkedin />
-              </a>
+              <Button variant="default" size="icon">
+                <a href="https://www.linkedin.com/in/hao-duong-a87058196/">
+                  <Linkedin />
+                </a>
+              </Button>
             </li>
             <li>
-              <a href="https://github.com/duonghao">
-                <Github />
-              </a>
+              <Button variant="default" size="icon">
+                <a href="https://github.com/duonghao">
+                  <Github />
+                </a>
+              </Button>
             </li>
           </ul>
         </header>

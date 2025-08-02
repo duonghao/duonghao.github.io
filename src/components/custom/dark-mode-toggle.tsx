@@ -18,7 +18,7 @@ export function DarkModeToggle() {
   };
 
   return (
-    <Button variant="outline" size="icon" onClick={onClickHandler}>
+    <Button variant="secondary" size="icon" onClick={onClickHandler}>
       {theme === "light" ? (
         <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
       ) : (
