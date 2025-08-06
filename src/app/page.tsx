@@ -1,3 +1,11 @@
+"use client";
+
+import {
+  useState,
+  unstable_ViewTransition as ViewTransition,
+  startTransition,
+} from "react";
+
 import { DarkModeToggle } from "@/components/custom/dark-mode-toggle";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -5,6 +13,42 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Linkedin, Github } from "lucide-react";
 
 export default function Home() {
+  const [fullScreen, setFullScreen] = useState<boolean>(false);
+
+  if (fullScreen) {
+    return (
+      <div className="p-16 flex-1 w-full flex items-stretch gap-4">
+        <ViewTransition name="project-1">
+          <div
+            className=" w-[80%] bg-gray-400"
+            onClick={() =>
+              startTransition(() => setFullScreen((fullScreen) => !fullScreen))
+            }
+          />
+        </ViewTransition>
+        <aside className="flex-1">
+          <ul className="h-full flex flex-col gap-2">
+            <li className="flex-1">
+              <ViewTransition name="project-2">
+                <div className="h-full w-full bg-gray-400"></div>
+              </ViewTransition>
+            </li>
+            <li className="flex-1">
+              <ViewTransition name="project-3">
+                <div className="h-full w-full bg-gray-400"></div>
+              </ViewTransition>
+            </li>
+            <li className="flex-1">
+              <ViewTransition name="project-4">
+                <div className="h-full w-full bg-gray-400"></div>
+              </ViewTransition>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    );
+  }
+
   return (
     <>
       <header className="flex justify-end">
@@ -51,16 +95,31 @@ export default function Home() {
               <article className="h-full">
                 <ul className="grid grid-cols-2 gap-2 flex-1 h-full">
                   <li>
-                    <div className="h-full w-full bg-gray-400"></div>
+                    <ViewTransition name="project-1">
+                      <button
+                        className="h-full w-full bg-gray-400"
+                        onClick={() =>
+                          startTransition(() =>
+                            setFullScreen((fullScreen) => !fullScreen),
+                          )
+                        }
+                      />
+                    </ViewTransition>
                   </li>
                   <li>
-                    <div className="h-full w-full bg-gray-400"></div>
+                    <ViewTransition name="project-2">
+                      <div className="h-full w-full bg-gray-400"></div>
+                    </ViewTransition>
                   </li>
                   <li>
-                    <div className="h-full w-full bg-gray-400"></div>
+                    <ViewTransition name="project-3">
+                      <div className="h-full w-full bg-gray-400"></div>
+                    </ViewTransition>
                   </li>
                   <li>
-                    <div className="h-full w-full bg-gray-400"></div>
+                    <ViewTransition name="project-4">
+                      <div className="h-full w-full bg-gray-400"></div>
+                    </ViewTransition>
                   </li>
                 </ul>
               </article>
