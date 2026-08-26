@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # static build output directory
-          path: '/dist/client'
+          path: 'dist/client'
 
       - name: Deploy to GitHub Pages
         id: deployment
