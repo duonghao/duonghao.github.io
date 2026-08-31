@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { allPosts } from '../../../.content-collections/generated'
-import { MMM_YY_FORMATTER } from '#/lib/dates'
+import { DD_MM_YY_FORMATTER } from '#/lib/dates'
 
 export function Blogs() {
   const sortedPosts = allPosts.sort(
@@ -11,12 +11,12 @@ export function Blogs() {
     <div>
       <ul className='flex flex-col gap-4'>
         {sortedPosts.map((post) => (
-          <li key={post.slug}>
+          <li key={post.slug} className="flex items-baseline justify-between gap-4">
             <Link to="/blog/$slug" params={{ slug: post.slug }}>
-              <h2>{post.title}</h2>
+              <h3>{post.title}</h3>
             </Link>
-            <span className="text-sm text-muted-foreground">
-              {MMM_YY_FORMATTER.format(post.published)}
+            <span className="shrink-0 text-sm text-muted-foreground">
+              {DD_MM_YY_FORMATTER.format(post.published)}
             </span>
           </li>
         ))}
