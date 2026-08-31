@@ -12,7 +12,7 @@ export function Hero() {
       </header>
       <ul className="text-sm">
         {CONTACTS.map((contact) => (
-          <li>
+          <li key={contact.link}>
             <Contact contact={contact} />
           </li>
         ))}
