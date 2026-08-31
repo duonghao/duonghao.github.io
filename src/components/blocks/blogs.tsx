@@ -9,7 +9,7 @@ export function Blogs() {
 
   return (
     <div>
-      <ul>
+      <ul className='flex flex-col gap-4'>
         {sortedPosts.map((post) => (
           <li key={post.slug}>
             <Link to="/blog/$slug" params={{ slug: post.slug }}>
