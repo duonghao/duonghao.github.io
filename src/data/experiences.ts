@@ -16,51 +16,51 @@ export type IPosition = {
 export const EXPERIENCES: IExperience[] = [
   {
     company: 'Liferay',
-    start: new Date('2024-01-01'),
+    start: new Date(Date.UTC(2024, 0)),
     end: 'present',
     positions: [
       {
         title: 'Solutions Engineer',
-        start: new Date('2025-03-01'),
+        start: new Date(Date.UTC(2025, 2)),
         end: 'present',
         points: ['Point 1'],
       },
       {
         title: 'Associate Solutions Engineer',
-        start: new Date('2024-07-01'),
-        end: new Date('2025-03-01'),
+        start: new Date(Date.UTC(2024, 6)),
+        end: new Date(Date.UTC(2025, 2)),
         points: ['Point 1'],
       },
       {
         title: 'Software Engineer Trainee',
-        start: new Date('2024-01-01'),
-        end: new Date('2024-07-01'),
+        start: new Date(Date.UTC(2024, 0)),
+        end: new Date(Date.UTC(2024, 6)),
         points: ['Point 1'],
       },
     ],
   },
   {
     company: 'Babcock',
-    start: new Date('2020-03-01'),
-    end: new Date('2022-06-01'),
+    start: new Date(Date.UTC(2020, 2)),
+    end: new Date(Date.UTC(2022, 5)),
     positions: [
       {
         title: 'Mechanical Engineer',
-        start: new Date('2020-03-01'),
-        end: new Date('2022-06-01'),
+        start: new Date(Date.UTC(2020, 2)),
+        end: new Date(Date.UTC(2022, 5)),
         points: ['Point 1'],
       },
     ],
   },
   {
     company: 'Defence Science and Technology Group',
-    start: new Date('2018-02-01'),
-    end: new Date('2018-11-01'),
+    start: new Date(Date.UTC(2018, 1)),
+    end: new Date(Date.UTC(2018, 10)),
     positions: [
       {
         title: 'Undergraduate Research Assistant',
-        start: new Date('2018-02-01'),
-        end: new Date('2018-11-01'),
+        start: new Date(Date.UTC(2018, 1)),
+        end: new Date(Date.UTC(2018, 10)),
         points: ['Point 1'],
       },
     ],
