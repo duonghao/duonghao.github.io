@@ -34,9 +34,10 @@ Each tenant can given their own shard, or even mutiple tenants can be organised 
 
 The goal is for linear scaling of nodes. i.e. if you have 10 nodes, we should be able to handle 10 times more data. If sharding is unbalanced, we can have certain nodes handling more data than others. These are called hot shard or hot spot and sharding is less effective if this is the case. 
 
-To split the data, we use an algorithm to take the record as an input, and tell us where in which shard should we put that record.
+To split the data, we use an algorithm to take the record as an input to output which shard it should be placed.
 
 1. Sharding By Key Range
+
     Contiguous range of partition keys. 
 
     Advantages
@@ -48,9 +49,9 @@ To split the data, we use an algorithm to take the record as an input, and tell 
 
 1. Sharding By Hash of Key
 
-    Hash of partition key, then:
-        1. Modulo the hash (e.g. hash % n-1)
-        2. Fixed number of shards (e.g. 1000 shards / 10 nodes = 100 shards / node becomes 1000 shards / 11 nodes = ~91 shards / node, where the shards are moved between the nodes. n shards >> m nodes. n shards is constant.)
+    Hash of partition key.
+      1. Modulo the hash (e.g. hash % n-1)
+      1. Fixed number of shards (e.g. 1000 shards / 10 nodes = 100 shards / node becomes 1000 shards / 11 nodes = ~91 shards / node, where the shards are moved between the nodes. n shards >> m nodes. n shards is constant.)
 
     Advantages
     - uniform distribution (assuming a good hash function)
