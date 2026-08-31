@@ -25,7 +25,7 @@ function Experience({ experience }: ExperienceProps) {
   return (
     <section>
       <header className="mb-2">
-        <h4 className="font-semibold">{experience.company}</h4>
+        <h3 className="font-semibold">{experience.company}</h3>
         <Interval interval={{ start: experience.start, end: experience.end }} />
       </header>
       <ul>

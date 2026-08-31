@@ -41,13 +41,13 @@ export const EXPERIENCES: IExperience[] = [
   },
   {
     company: 'Babcock',
-    start: new Date('2022-01-01'),
-    end: new Date('2022-01-01'),
+    start: new Date('2020-03-01'),
+    end: new Date('2022-06-01'),
     positions: [
       {
         title: 'Mechanical Engineer',
-        start: new Date('01/01/2020'),
-        end: new Date('01/01/2022'),
+        start: new Date('2020-03-01'),
+        end: new Date('2022-06-01'),
         points: ['Point 1'],
       },
     ],

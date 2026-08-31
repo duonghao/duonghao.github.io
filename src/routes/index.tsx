@@ -11,15 +11,15 @@ function Home() {
         <Hero />
       </article>
       <article id="experiences" className="mb-8">
-        <h3 className="font-bold mb-4">Experience</h3>
+        <h2 className="text-lg font-bold mb-4">Experience</h2>
         <Experiences experiences={EXPERIENCES} />
       </article>
       <article id="projects" className="mb-8">
-        <h3 className="font-bold mb-4">Projects</h3>
+        <h2 className="text-lg font-bold mb-4">Projects</h2>
         <Projects />
       </article>
       <article id="blogs" className="mb-8">
-        <h3 className="font-bold mb-4">Blogs</h3>
+        <h2 className="text-lg font-bold mb-4">Blogs</h2>
         <Blogs />
       </article>
     </section>
