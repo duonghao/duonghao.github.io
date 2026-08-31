@@ -1,17 +1,18 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from '@tanstack/react-router'
 
 export function Navbar() {
   return (
     <nav>
-      <ul className="text-base flex gap-4">
+      <ul className="text-base flex gap-2">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" hash="projects">
+            Projects
+          </Link>
         </li>
         <li>
-          <Link to="/" hash="projects">Projects</Link>
-        </li>
-        <li>
-          <Link to="/" hash="blogs">Blogs</Link>
+          <Link to="/" hash="blogs">
+            Blogs
+          </Link>
         </li>
       </ul>
     </nav>

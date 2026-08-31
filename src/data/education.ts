@@ -18,5 +18,4 @@ export const EDUCATION: IEducation[] = [
     start: new Date(Date.UTC(2014, 0)),
     end: new Date(Date.UTC(2019, 0)),
   },
-  
 ]

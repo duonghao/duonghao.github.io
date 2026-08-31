@@ -22,13 +22,17 @@ interface ExperienceProps {
   experience: IExperience
 }
 function Experience({ experience }: ExperienceProps) {
-  const hasMultiplePositions = experience.positions.length > 1;
+  const hasMultiplePositions = experience.positions.length > 1
 
   return (
     <section>
       <header className="mb-2 flex items-baseline justify-between">
         <h3 className="font-semibold">{experience.company}</h3>
-        {hasMultiplePositions && <Interval interval={{ start: experience.start, end: experience.end }} />}
+        {hasMultiplePositions && (
+          <Interval
+            interval={{ start: experience.start, end: experience.end }}
+          />
+        )}
       </header>
       <ul>
         {experience.positions.map((position) => (
@@ -47,7 +51,7 @@ interface PositionProps {
 function Position({ position }: PositionProps) {
   return (
     <article>
-      <header className="flex justify-between">
+      <header className="flex items-baseline justify-between">
         <h4>{position.title}</h4>
         <Interval interval={{ start: position.start, end: position.end }} />
       </header>

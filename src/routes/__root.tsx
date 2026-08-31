@@ -1,4 +1,9 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import {
+  HeadContent,
+  Link,
+  Scripts,
+  createRootRoute,
+} from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
@@ -37,8 +42,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <header className="w-full flex justify-between mb-6">
-            <h1 className="text-xl font-bold">Hao Duong</h1>
+          <header className="w-full flex items-baseline justify-between mb-6">
+            <h1 className="text-xl font-bold">
+              <Link to="/">Hao Duong</Link>
+            </h1>
             <Navbar />
           </header>
           <main>{children}</main>

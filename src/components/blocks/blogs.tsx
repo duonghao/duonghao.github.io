@@ -9,12 +9,17 @@ export function Blogs() {
 
   return (
     <div>
-      <ul className='flex flex-col gap-4'>
+      <ul className="flex flex-col gap-4">
         {sortedPosts.map((post) => (
-          <li key={post.slug} className="flex items-baseline justify-between gap-4">
-            <Link to="/blog/$slug" params={{ slug: post.slug }}>
-              <h3>{post.title}</h3>
-            </Link>
+          <li
+            key={post.slug}
+            className="flex items-baseline justify-between gap-4"
+          >
+            <h3>
+              <Link to="/blog/$slug" params={{ slug: post.slug }}>
+                {post.title}
+              </Link>
+            </h3>
             <span className="shrink-0 text-sm text-muted-foreground">
               {DD_MM_YY_FORMATTER.format(post.published)}
             </span>
