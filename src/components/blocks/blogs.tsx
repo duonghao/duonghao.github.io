@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { allPosts } from '../../../.content-collections/generated'
-import { DD_MM_YY_FORMATTER } from '#/lib/dates'
+import { Interval } from './interval'
+import { DD_MM_YYYY_FORMATTER } from '#/lib/dates'
 
 export function Blogs() {
   const sortedPosts = allPosts.sort(
@@ -20,9 +21,10 @@ export function Blogs() {
                 {post.title}
               </Link>
             </h3>
-            <span className="shrink-0 text-sm text-muted-foreground">
-              {DD_MM_YY_FORMATTER.format(post.published)}
-            </span>
+            <Interval
+              interval={{ start: post.published }}
+              formatter={DD_MM_YYYY_FORMATTER}
+            />
           </li>
         ))}
       </ul>

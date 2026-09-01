@@ -13,20 +13,20 @@ export const Route = createFileRoute('/')({ component: Home })
 
 const articles = [
   {
-    title: 'Experience',
-    render: () => <Experiences experiences={EXPERIENCES} />,
-  },
-  {
-    title: 'Education',
-    render: () => <Educations education={EDUCATION} />,
-  },
-  {
     title: 'Projects',
     render: () => <Projects />,
   },
   {
     title: 'Blogs',
     render: () => <Blogs />,
+  },
+  {
+    title: 'Experience',
+    render: () => <Experiences experiences={EXPERIENCES} />,
+  },
+  {
+    title: 'Education',
+    render: () => <Educations education={EDUCATION} />,
   },
 ]
 

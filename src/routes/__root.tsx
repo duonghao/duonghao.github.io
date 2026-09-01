@@ -9,6 +9,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
 import { Navbar } from '#/components/blocks/navbar'
+import { Footer } from '#/components/blocks/footer'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -41,7 +42,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="container mx-auto max-w-4xl px-4 py-8">
+        <div className="container mx-auto max-w-4xl px-4 py-8 min-h-dvh grid grid-rows-[auto_1fr_auto]">
           <header className="w-full flex items-baseline justify-between mb-6">
             <h1 className="text-xl font-bold">
               <Link to="/">Hao Duong</Link>
@@ -49,6 +50,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <Navbar />
           </header>
           <main>{children}</main>
+          <Footer />
         </div>
         <TanStackDevtools
           config={{

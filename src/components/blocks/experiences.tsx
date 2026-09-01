@@ -1,20 +1,19 @@
-import type { IExperience, IPosition, IInterval } from '#/data/experiences'
-import { MMM_YY_FORMATTER, PRESENT } from '#/lib/dates'
+import type { IExperience, IPosition } from '#/data/experiences'
+import { MMM_YYYY_FORMATTER } from '#/lib/dates'
+import { Interval } from './interval'
 
 interface ExperiencesProps {
   experiences: IExperience[]
 }
 export function Experiences({ experiences }: ExperiencesProps) {
   return (
-    <div>
-      <ul className="flex flex-col gap-4">
-        {experiences.map((experience) => (
-          <li key={experience.company}>
-            <Experience experience={experience} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="flex flex-col gap-4">
+      {experiences.map((experience) => (
+        <li key={experience.company}>
+          <Experience experience={experience} />
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -31,6 +30,7 @@ function Experience({ experience }: ExperienceProps) {
         {hasMultiplePositions && (
           <Interval
             interval={{ start: experience.start, end: experience.end }}
+            formatter={MMM_YYYY_FORMATTER}
           />
         )}
       </header>
@@ -53,22 +53,11 @@ function Position({ position }: PositionProps) {
     <article>
       <header className="flex items-baseline justify-between">
         <h4>{position.title}</h4>
-        <Interval interval={{ start: position.start, end: position.end }} />
+        <Interval
+          interval={{ start: position.start, end: position.end }}
+          formatter={MMM_YYYY_FORMATTER}
+        />
       </header>
     </article>
-  )
-}
-
-interface IntervalProps {
-  interval: IInterval
-}
-function Interval({ interval }: IntervalProps) {
-  return (
-    <p className="text-muted-foreground text-sm">
-      {MMM_YY_FORMATTER.format(interval.start)} -{' '}
-      {interval.end === 'present'
-        ? PRESENT
-        : MMM_YY_FORMATTER.format(interval.end)}
-    </p>
   )
 }

@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 export function Navbar() {
   return (
     <nav>
-      <ul className="text-base flex gap-2">
+      <ul className="text-base flex gap-4">
         <li>
           <Link to="/" hash="projects">
             Projects

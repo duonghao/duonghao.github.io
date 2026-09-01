@@ -117,16 +117,14 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-html,
-body,
-#app {
-  min-height: 100%;
+html {
+  height: 100%;
 }
 
 body {
+  min-height: 100%;
   margin: 0;
   font-family: var(--font-sans);
-  background-color: var(--bg-base);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
