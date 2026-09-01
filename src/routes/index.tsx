@@ -8,13 +8,14 @@ import {
 import { EXPERIENCES } from '#/data/experiences'
 import { EDUCATION } from '#/data/education'
 import { createFileRoute } from '@tanstack/react-router'
+import { PROJECTS } from '#/data/projects'
 
 export const Route = createFileRoute('/')({ component: Home })
 
 const articles = [
   {
     title: 'Projects',
-    render: () => <Projects />,
+    render: () => <Projects projects={PROJECTS} />,
   },
   {
     title: 'Blogs',
