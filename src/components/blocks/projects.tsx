@@ -4,9 +4,15 @@ interface ProjectsProps {
   projects: IProject[]
 }
 export function Projects({ projects }: ProjectsProps) {
+  const visibleProjects = projects.filter((project) => project.isVisible)
+
+  if (visibleProjects.length === 0) {
+    return <p className='text-sm text-muted-foreground'>Brewing...</p>
+  }
+
   return (
     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {projects.map((project) => (
+      {visibleProjects.map((project) => (
         <Project project={project} />
       ))}
     </ul>
