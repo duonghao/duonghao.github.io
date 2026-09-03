@@ -91,8 +91,41 @@ To split the data, we use an algorithm to take the record as an input to output 
 
 For skewed workloads (e.g. celebrity posts have more reads), consistent hashing can still cause hot spots. Flexible sharding policies are required to adapt to these situations. Individual hot keys can be assigned their own shard, and own node. Can also compensate on the application side by augmenting the hot key (e.g. add extra digits to user_id to randomise the hashing).
 
+## Request Routing
+
+For shard databases, we have to figure out which node to send the record as it can only be handled by a node with a shard containing that key. To do so, the router must be aware of keys to shards and shards to node.
+
+There are a few approaches to routing a record to the right node:
+1. Client -> node -> node (node is aware of the right node, passing between nodes as necessary)
+2. Client -> router -> node (router is aware of the right node)
+3. Client -> node (client is aware of the right node)
+
+## Secondary Indexes for Searching
+
+### Local
+
+Each shard maintains it's own isolated secondary indexes. As records is stored across shards, you may need to send queries to all shards and combine the results. This makes read queries particularly expensive.
+
+### Global
+
+Global index which covers all shards, and it itself is sharded for reliablity. You no longer have to read and combine results across shards as they can be found on one shard assuming your searching on one term, but if it's across terms you still need to perform the intersection of results. This indexing method is useful if read >> write and if the posting lists is small.
+
 ## Summary
 
-Sharding is one tool in our toolbox to implement horizontal scaling. However, it introduces significant complexity and should only be used when necessary. With the right implementation, we can achieve linear scaling with evenly distributed loads, maximising data volume and throughput.
+Sharding is one tool in our toolbox to implement horizontal scaling. However, it introduces significant complexity and should only be used when necessary. With the right implementation, we can achieve linear scaling with evenly distributed loads across nodes, maximising data volume and throughput.
 
-Care should be taken to use the an appropriate sharding algorithm based on the dataset to ensure that heavy operations (e.g. resharding, rebalancing) are minimised.
+There are two mains approaches:
+1. Key Range Sharding
+2. Hash Sharding
+
+Care should be taken to use the an appropriate sharding algorithm based on the dataset to ensure that heavy operations (e.g. resharding, rebalancing) and hot spots (nodes with disproportionately high load) are minimised.
+
+With sharding we must also consider how we route queries to the correct shard, of which there are different techniques depending on what should be aware of the mapping between keys to shards and shards to nodes.
+
+Secondary indexes for searching also need to be sharded as well.
+
+There are two main approaches:
+1. Local Secondary Index (high write throughput, lower read throughput)
+2. Global Secondary Index (lower write throughput, higher read throughput)
+
+The difference mainly being how the secondary indexes are distributed, with local being isolated indexes that may require searching across shards to resolve a query and global being a search on a single shard but require much more work on the write side. This shows the trade-off between reads and writes. Do more work upfront for quick reads, or vice versa.
