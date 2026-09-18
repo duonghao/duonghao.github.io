@@ -11,7 +11,7 @@ export function Projects({ projects }: ProjectsProps) {
   }
 
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <ul className="grid grid-cols-1 md:grid-cols-2">
       {visibleProjects.map((project) => (
         <Project project={project} />
       ))}
@@ -24,20 +24,26 @@ interface ProjectProps {
 }
 function Project({ project }: ProjectProps) {
   return (
-    <div className="h-96 border rounded-lg flex flex-col shadow-sm">
-      <div className="flex-1">
-        <img src="" alt="blackjack project overview" />
+    <div className="relative h-72 flex flex-col border">
+      <div className="flex-1 overflow-hidden">
+        <img
+          src={project.img.src}
+          alt={project.img.alt}
+          className="w-full h-full object-contain"
+        />
       </div>
-      <header className="min-h-16 p-4 border-t">
-        <div className="mb-8">
-          <h3 className="font-semibold">{project.title}</h3>
-          <p className="text-sm text-muted-foreground">{project.description}</p>
+      <header className="min-h-16 absolute bottom-0 w-full p-2 border-t backdrop-blur-md bg-muted/30">
+        <div className="mb-2">
+          <h3 className="sr-only">{project.title}</h3>
+          <p className="tracking-wide text-base text-muted-foreground">
+            {project.description}
+          </p>
         </div>
-        <ul className="flex gap-2">
+        <ul className="flex gap-2 flex-wrap">
           {project.stack.map((entry) => (
             <li
               key={entry}
-              className="text-sm tracking-wide uppercase text-muted-foreground/50"
+              className="text-sm tracking-wide uppercase text-muted-foreground/70"
             >
               {entry}
             </li>

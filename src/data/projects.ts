@@ -1,5 +1,9 @@
 export interface IProject {
   title: string
+  img: {
+    src: string,
+    alt: string,
+  }
   description: string
   stack: string[],
   isVisible: boolean,
@@ -8,8 +12,12 @@ export interface IProject {
 export const PROJECTS: IProject[] = [
   {
     title: 'Blackjack',
-    description: 'Real-time online multiplayer blackjack',
+    img: {
+      src: '/assets/blackjack.png',
+      alt: 'blackjack project'
+    },
+    description: 'Real-time multiplayer blackjack',
     stack: ['React', 'TypeScript', 'Node.js', 'socket.io'],
-    isVisible: false,
-  },
+    isVisible: true,
+  }
 ]
