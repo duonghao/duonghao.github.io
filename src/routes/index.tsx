@@ -39,7 +39,7 @@ function Home() {
       </article>
       {articles.map((article) => (
         <article key={article.title} id={article.title} className="mb-8">
-          <h2 className="text-lg font-bold mb-4">{article.title}</h2>
+          <h2 className="text-lg font-bold mb-4 border-b pb-1">{article.title}</h2>
           {article.render()}
         </article>
       ))}

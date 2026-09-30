@@ -6,6 +6,8 @@ export interface IProject {
   }
   description: string
   stack: string[],
+  year: number,
+  href?: string,
   isVisible: boolean,
 }
 
@@ -18,6 +20,7 @@ export const PROJECTS: IProject[] = [
     },
     description: 'Real-time multiplayer blackjack',
     stack: ['React', 'TypeScript', 'Node.js', 'socket.io'],
+    year: 2026,
     isVisible: true,
   }
 ]

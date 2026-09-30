@@ -3,7 +3,7 @@ import { Contacts } from './contacts'
 
 export function Footer() {
   return (
-    <footer className="min-h-16 flex items-center justify-end">
+    <footer className="min-h-16 flex items-center justify-end border-t">
       <Contacts contacts={CONTACTS} />
     </footer>
   )
