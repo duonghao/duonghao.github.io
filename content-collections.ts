@@ -31,6 +31,22 @@ const posts = defineCollection({
   },
 })
 
+const projects = defineCollection({
+  name: 'projects',
+  directory: './src/data/project',
+  include: '*.md',
+  schema: postSchema,
+  transform: ({ content, ...project }) => {
+    const frontMatter = extractFrontMatter(content)
+
+    return {
+      ...project,
+      slug: project._meta.path,
+      content: frontMatter.body,
+    }
+  },
+})
+
 export default defineConfig({
-  collections: [posts],
+  collections: [posts, projects],
 })

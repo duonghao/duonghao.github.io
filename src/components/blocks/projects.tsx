@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Link } from '@tanstack/react-router'
 import type { IProject } from '#/data/projects'
 
 interface ProjectsProps {
@@ -27,7 +28,7 @@ interface ProjectProps {
 }
 function Project({ project }: ProjectProps) {
   return (
-    <ProjectLink href={project.href}>
+    <ProjectLink slug={project.slug}>
       <img
         src={project.img.src}
         alt={project.img.alt}
@@ -48,17 +49,21 @@ function Project({ project }: ProjectProps) {
 }
 
 interface ProjectLinkProps {
-  href?: string
+  slug?: string
   children: ReactNode
 }
-function ProjectLink({ href, children }: ProjectLinkProps) {
-  if (!href) {
-    return <article>{children}</article>
+function ProjectLink({ slug, children }: ProjectLinkProps) {
+  if (!slug) {
+    return <article className="p-3">{children}</article>
   }
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+    <Link
+      to="/project/$slug"
+      params={{ slug }}
+      className="block rounded-xl p-3 transition-colors hover:bg-muted-foreground/5 hover:no-underline!"
+    >
       {children}
-    </a>
+    </Link>
   )
 }
