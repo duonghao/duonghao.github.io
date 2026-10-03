@@ -12,6 +12,9 @@ export const Route = createFileRoute('/blog/$slug')({
     return post
   },
   component: BlogPost,
+  notFoundComponent: () => {
+    return <p>Oops, no such blog post exists.</p>
+  },
 })
 
 function BlogPost() {

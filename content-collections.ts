@@ -10,7 +10,7 @@ function extractFrontMatter(content: string) {
 
 const posts = defineCollection({
   name: 'posts',
-  directory: './src/data/blog',
+  directory: './src/data/blog/published',
   include: '*.md',
   schema: postSchema,
   transform: ({ content, ...post }) => {
