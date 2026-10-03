@@ -14,19 +14,19 @@ export const Route = createFileRoute('/')({ component: Home })
 
 const articles = [
   {
-    title: 'Projects',
+    title: 'projects',
     render: () => <Projects projects={PROJECTS} />,
   },
   {
-    title: 'Blogs',
+    title: 'blogs',
     render: () => <Blogs />,
   },
   {
-    title: 'Experience',
+    title: 'experience',
     render: () => <Experiences experiences={EXPERIENCES} />,
   },
   {
-    title: 'Education',
+    title: 'education',
     render: () => <Educations education={EDUCATION} />,
   },
 ]
@@ -34,12 +34,17 @@ const articles = [
 function Home() {
   return (
     <section>
-      <article className="min-h-64 flex items-center">
+      <article className="w-full">
         <Hero />
       </article>
       {articles.map((article) => (
-        <article key={article.title} id={article.title} className="mb-8">
-          <h2 className="text-lg font-bold mb-4 border-b pb-1">{article.title}</h2>
+        <article key={article.title} className="mb-8">
+          <h2
+            className="text-lg font-bold mb-4 border-b pb-1 capitalize"
+            id={article.title}
+          >
+            {article.title}
+          </h2>
           {article.render()}
         </article>
       ))}

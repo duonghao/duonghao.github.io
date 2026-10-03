@@ -38,7 +38,7 @@ function Education({ education }: EducationProps) {
       </header>
       <ul>
         {education.qualifications.map((qualitifcation) => (
-          <li>
+          <li key={qualitifcation.title}>
             <Qualification qualification={qualitifcation} />
           </li>
         ))}

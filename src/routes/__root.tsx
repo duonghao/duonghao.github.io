@@ -44,9 +44,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <div className="container mx-auto max-w-4xl px-4 py-8 min-h-dvh grid grid-rows-[auto_1fr_auto]">
           <header className="w-full flex items-baseline justify-between mb-6">
-            <h1 className="text-xl font-bold">
-              <Link to="/">Hao Duong</Link>
-            </h1>
+            <div>
+              <h1 className="text-xl font-bold">
+                <Link to="/">Hao Duong</Link>
+              </h1>
+              <p className="text-muted-foreground text-sm">
+                Full-stack Software Engineer
+              </p>
+            </div>
             <Navbar />
           </header>
           <main>{children}</main>
