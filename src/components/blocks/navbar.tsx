@@ -5,6 +5,9 @@ export function Navbar() {
     <nav>
       <ul className="text-base flex gap-4">
         <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
           <Link to="/" hash="projects">
             Projects
           </Link>

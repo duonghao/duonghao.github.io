@@ -1,12 +1,5 @@
-import {
-  Experiences,
-  Educations,
-  Projects,
-  Blogs,
-  Hero,
-} from '#/components/blocks'
-import { EXPERIENCES } from '#/data/experiences'
-import { EDUCATION } from '#/data/education'
+import { Projects, Blogs, Hero } from '#/components/blocks'
+
 import { createFileRoute } from '@tanstack/react-router'
 import { PROJECTS } from '#/data/projects'
 
@@ -21,19 +14,11 @@ const articles = [
     title: 'blogs',
     render: () => <Blogs />,
   },
-  {
-    title: 'experience',
-    render: () => <Experiences experiences={EXPERIENCES} />,
-  },
-  {
-    title: 'education',
-    render: () => <Educations education={EDUCATION} />,
-  },
 ]
 
 function Home() {
   return (
-    <section>
+    <section className="pb-64">
       <article className="w-full">
         <Hero />
       </article>

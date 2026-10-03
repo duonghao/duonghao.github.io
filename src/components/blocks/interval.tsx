@@ -7,7 +7,7 @@ interface IntervalProps {
 }
 export function Interval({ interval, formatter }: IntervalProps) {
   return (
-    <p className="flex justify-end gap-1 text-muted-foreground text-sm font-mono min-w-[11rem]">
+    <p className="flex justify-end gap-1 text-muted-foreground text-sm font-mono min-w-44">
       <IntervalDate date={interval.start} formatter={formatter} />
       {interval.end && (
         <>
