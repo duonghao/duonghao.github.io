@@ -1,5 +1,5 @@
 ---
-title: Blackjack
+title: Another Hands
 description: Real-time multiplayer blackjack
 published: 2026-10-03
 authors:

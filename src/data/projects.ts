@@ -13,7 +13,7 @@ export interface IProject {
 
 export const PROJECTS: IProject[] = [
   {
-    title: 'Blackjack',
+    title: 'Another Hands',
     img: {
       src: '/assets/blackjack.png',
       alt: 'blackjack project'
