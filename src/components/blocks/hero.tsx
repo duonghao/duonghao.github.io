@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <header className="mb-6 w-full flex flex-wrap min-h-128 pt-32">
+    <header className="mb-6 w-full grid grid-cols-1 md:grid-cols-2 min-h-128 pt-32">
       <h2 className="text-2xl flex-1 min-w-sm">I'm Hao</h2>
       <div className="space-y-3 text-foreground/70 tracking-wide flex-1">
         <p>

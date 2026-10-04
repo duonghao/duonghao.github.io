@@ -1,15 +1,9 @@
-import {
-  HeadContent,
-  Link,
-  Scripts,
-  createRootRoute,
-} from '@tanstack/react-router'
+import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
-import { Navbar } from '#/components/blocks/navbar'
-import { Footer } from '#/components/blocks/footer'
+import { Footer, Header } from '#/components/blocks'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -42,18 +36,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="container mx-auto max-w-4xl px-4 py-8 min-h-dvh grid grid-rows-[auto_1fr_auto]">
-          <header className="w-full flex items-baseline justify-between mb-6">
-            <div>
-              <h1 className="text-xl font-bold">
-                <Link to="/">Hao Duong</Link>
-              </h1>
-              <p className="text-muted-foreground text-sm">
-                Full-stack Software Engineer
-              </p>
-            </div>
-            <Navbar />
-          </header>
+        <div className="container mx-auto max-w-4xl px-4 py-2 min-h-dvh grid grid-rows-[auto_1fr_auto]">
+          <Header />
           <main>{children}</main>
           <Footer />
         </div>
