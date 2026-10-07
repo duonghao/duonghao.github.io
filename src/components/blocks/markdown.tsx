@@ -11,13 +11,34 @@ type MarkdownProps = {
   className?: string
 }
 
-export function Markdown({ content, className }: MarkdownProps) {
+export function useMarkdown(content: string) {
   const [result, setResult] = useState<MarkdownResult | null>(null)
 
   useEffect(() => {
-    renderMarkdown(content).then(setResult)
+    let cancelled = false
+    renderMarkdown(content).then((r) => {
+      if (!cancelled) setResult(r)
+    })
+    return () => {
+      cancelled = true
+    }
   }, [content])
 
+  return result
+}
+
+export function Markdown({ content, className }: MarkdownProps) {
+  const result = useMarkdown(content)
+  return <MarkdownBody result={result} className={className} />
+}
+
+export function MarkdownBody({
+  result,
+  className,
+}: {
+  result: MarkdownResult | null
+  className?: string
+}) {
   if (!result) {
     return <div className={className}>Loading...</div>
   }

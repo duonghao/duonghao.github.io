@@ -145,3 +145,13 @@ a:hover {
     color: var(--foreground);
   }
 }
+
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 1.5rem;
+}
+
+.prose :is(h1, h2, h3, h4, h5, h6) a.anchor {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
