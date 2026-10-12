@@ -27,6 +27,7 @@
     "gray-matter": "^4.0.3",
     "html-react-parser": "^6.1.7",
     "lucide-react": "^0.577.0",
+    "radix-ui": "^1.8.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "rehype-autolink-headings": "^7.1.0",

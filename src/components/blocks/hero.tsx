@@ -1,22 +1,46 @@
+import { CONTACTS } from '#/data/contacts'
+import { Button } from '#/components/ui/button'
+
+const linkedin = CONTACTS.find((contact) => contact.name === 'LinkedIn')
+
 export function Hero() {
   return (
-    <header className="mb-6 w-full grid grid-cols-1 md:grid-cols-2 min-h-128 pt-32">
-      <h2 className="text-2xl flex-1 min-w-sm">I'm Hao</h2>
-      <div className="space-y-3 text-foreground/70 tracking-wide flex-1">
-        <p>
-          A software engineer by trade, but mostly I just like making things.
-        </p>
-        <p>
-          Originally from Australia, I’ve been living in Japan since 2023. I
-          came for the convenience, the food, and the excitement of being
-          somewhere new, and I’ve ended up finding plenty of things to love
-          along the way.
-        </p>
-        <p>
-          This is a little space for me to share those things. A new cafe I’ve
-          stumbled across, a project I’ve been tinkering with, something I’ve
-          learned, or just something I found interesting enough to share.
-        </p>
+    <header className="mb-12 w-full grid grid-cols-1 gap-6 md:grid-cols-2 pt-16 md:pt-24">
+      <h2 className="text-2xl">I'm Hao</h2>
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <p className="text-lg text-foreground">
+            Full-stack software engineer based in Tokyo, Japan, currently at
+            Liferay.
+          </p>
+          <p className="text-foreground/70 tracking-wide">
+            I tinker. I build. Occasionally, rapid unscheduled disassembly.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <div className="flex flex-wrap gap-3">
+            <Button asChild>
+              <a href="/resume.pdf" target="_blank" rel="noreferrer noopener">
+                View resume
+              </a>
+            </Button>
+            {linkedin && (
+              <Button asChild variant="outline">
+                <a
+                  href={linkedin.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Contact on LinkedIn
+                </a>
+              </Button>
+            )}
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Open to opportunities, feel free to reach out.
+          </p>
+        </div>
       </div>
     </header>
   )
