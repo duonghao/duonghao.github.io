@@ -5,15 +5,16 @@ const linkedin = CONTACTS.find((contact) => contact.name === 'LinkedIn')
 
 export function Hero() {
   return (
-    <header className="mb-12 w-full grid grid-cols-1 gap-6 md:grid-cols-2 pt-16 md:pt-24">
-      <h2 className="text-2xl">I'm Hao</h2>
+    <header className="pb-48 w-full grid grid-cols-1 gap-6 md:grid-cols-2 pt-24 md:pt-32">
+      <div>
+        <h2 className="text-2xl mb-2">I'm Hao</h2>
+        <p className="text-base text-muted-foreground">
+          Full-stack software engineer based in Tokyo, Japan.
+        </p>
+      </div>
       <div className="space-y-6">
         <div className="space-y-3">
-          <p className="text-lg text-foreground">
-            Full-stack software engineer based in Tokyo, Japan, currently at
-            Liferay.
-          </p>
-          <p className="text-foreground/70 tracking-wide">
+          <p className="text-foreground tracking-wide">
             I tinker. I build. Occasionally, rapid unscheduled disassembly.
           </p>
         </div>

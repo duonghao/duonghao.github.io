@@ -8,9 +8,6 @@ export function Header() {
         <h1 className="text-xl font-bold">
           <Link to="/">Hao Duong</Link>
         </h1>
-        <p className="text-muted-foreground text-sm">
-          Full-stack Software Engineer
-        </p>
       </div>
       <Navbar />
     </header>
