@@ -35,7 +35,8 @@ function About() {
           learned, or just something I found interesting enough to share.
         </p>
         <p>
-          For those curious who are also curious about my experience, education.
+          For those curious who are also curious about my experience and
+          education.
         </p>
       </header>
       {articles.map((article) => (
