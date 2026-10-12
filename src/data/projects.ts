@@ -21,7 +21,7 @@ export const PROJECTS: IProject[] = [
     description: 'Real-time multiplayer blackjack',
     stack: ['React', 'TypeScript', 'Node.js', 'socket.io'],
     year: 2026,
-    slug: 'blackjack',
+    slug: 'another-hands',
     isVisible: true,
   },
 ]

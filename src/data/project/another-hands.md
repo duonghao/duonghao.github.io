@@ -40,8 +40,6 @@ The overall aim is a real-time multiplayer blackjack game that holds up as more 
    1. Handle the messy parts of real connections: disconnects, reconnects and players leaving mid-round
 1. Design for scale
    1. Run many tables concurrently, with each table isolated from the others
-   1. Keep the application servers stateless where possible so capacity can be added by adding instances
-   1. Identify the bottlenecks as load grows and measure them with load tests, rather than guessing
 1. Be reliable and maintainable
    1. Recover gracefully from failures without losing the state of a game in progress
    1. Add observability (logging, metrics, tracing) so problems can be diagnosed in production
