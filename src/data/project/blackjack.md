@@ -6,6 +6,10 @@ authors:
   - Hao Duong
 ---
 
+If you can't wait to get a hand dealt, try it out at [another-hands.com](https://another-hands.com). Otherwise, read on for how it came to be.
+
+---
+
 ### Introduction
 
 Blackjack. We all know it. Been there, played that, casually or professionally, or, ahem, as a professional amateur. A game that has been reinvented so many times that one would be insane to make another one. I would agree, but it's precisely that point that I think makes for a great project. One of the challenges I've had in many of my other side projects is that unclear and arbitrary goals lead to unmanageable feature creep and, well... side project hell. Here we have a game, a defined set of rules, and one challenge. At least that's what I thought...
