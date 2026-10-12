@@ -131,7 +131,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a:hover {
+a:not([data-slot="button"]):hover {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
