@@ -10,7 +10,7 @@ export function Blogs() {
 
   return (
     <div>
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-4 p-3">
         {sortedPosts.map((post) => (
           <li
             key={post.slug}
