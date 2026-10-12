@@ -25,6 +25,15 @@ export const Route = createRootRoute({
         href: appCss,
       },
     ],
+    scripts: import.meta.env.PROD
+      ? [
+          {
+            type: 'module',
+            src: 'https://static.cloudflareinsights.com/beacon.min.js',
+            'data-cf-beacon': '{"token": "9c478e886ff34c1a8baa769a5442c738"}',
+          },
+        ]
+      : [],
   }),
   shellComponent: RootDocument,
 })
