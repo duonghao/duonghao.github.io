@@ -17,6 +17,11 @@ export function Navbar() {
             Blogs
           </Link>
         </li>
+        <li>
+          <a href="/resume.pdf" target="_blank" rel="noreferrer noopener">
+            Resume
+          </a>
+        </li>
       </ul>
     </nav>
   )
