@@ -17,8 +17,8 @@ export const EDUCATION: IEducation[] = [
     qualifications: [
       {
         title: 'Graduate Diploma of Computer Science',
-        start: new Date(Date.UTC(2022, 0)),
-        end: new Date(Date.UTC(2023, 0)),
+        start: new Date(Date.UTC(2022, 7)),
+        end: new Date(Date.UTC(2023, 6)),
       },
     ],
     start: new Date(Date.UTC(2022, 0)),
