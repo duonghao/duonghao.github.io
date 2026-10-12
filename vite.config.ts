@@ -9,6 +9,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 import contentCollections from '@content-collections/vite'
 
+const PDF_PATH = /\.pdf$/i
+
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
@@ -16,6 +18,9 @@ const config = defineConfig({
     contentCollections(),
     tailwindcss(),
     tanstackStart({
+      prerender: {
+        filter: ({ path }) => !PDF_PATH.test(path.split(/[?#]/)[0]),
+      },
       spa: {
         enabled: true,
         prerender: {
