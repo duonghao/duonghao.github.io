@@ -20,13 +20,13 @@ export const EXPERIENCES: IExperience[] = [
     end: 'present',
     positions: [
       {
-        title: 'Solutions Engineer',
+        title: 'Software Engineer (Solutions)',
         start: new Date(Date.UTC(2025, 2)),
         end: 'present',
         points: ['Point 1'],
       },
       {
-        title: 'Associate Solutions Engineer',
+        title: 'Associate Software Engineer (Solutions)',
         start: new Date(Date.UTC(2024, 6)),
         end: new Date(Date.UTC(2025, 2)),
         points: ['Point 1'],
