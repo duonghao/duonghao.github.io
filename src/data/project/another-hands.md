@@ -6,7 +6,7 @@ authors:
   - Hao Duong
 ---
 
-If you can't wait to get a hand dealt, try it out at [another-hands.com](https://another-hands.com). Otherwise, read on for how it came to be.
+If you can't wait to get a hand dealt, try it out at [anotherhands.com](https://anotherhands.com). Otherwise, read on for how it came to be.
 
 ---
 
